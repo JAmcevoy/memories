@@ -22,7 +22,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fas fa-home"></i>Home.
             </NavLink>
             <NavLink
               className={styles.NavLink}
