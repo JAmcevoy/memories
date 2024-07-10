@@ -36,12 +36,7 @@ function SignInForm() {
       setCurrentUser(data.user);
       history.push("/");
     } catch (err) {
-      if (err.response && err.response.data) {
-        setErrors(err.response.data);
-      } else {
-        console.error("Error occurred:", err);
-        // Handle generic error or fallback
-      }
+      setErrors(err.response?.data);
     }
   };
 
@@ -69,7 +64,7 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.username && errors.username.map((message, idx) => (
+            {errors.username?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
@@ -86,7 +81,7 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password && errors.password.map((message, idx) => (
+            {errors.password?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
@@ -97,7 +92,7 @@ function SignInForm() {
             >
               Sign in
             </Button>
-            {errors.non_field_errors && errors.non_field_errors.map((message, idx) => (
+            {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
               </Alert>
