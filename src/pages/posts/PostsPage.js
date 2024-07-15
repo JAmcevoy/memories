@@ -77,13 +77,13 @@ function PostsPage({ message, filter = "" }) {
               />
 
             ) : (
-              <Container claaName={appStyles.Content}>
+              <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
               </Container>
             )}
           </>
         ) : (
-          <Container claaName={appStyles.Content} >
+          <Container className={appStyles.Content} >
             <Asset spinner />
           </Container>
         )}
